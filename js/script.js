@@ -50,3 +50,6 @@ for (i = 0; i < surnamesList.length; i++) {
 
 // Step 5 - Stampa la posizione "umana" del cognome utente aggiunto in lista
 
+var lastMessage = document.getElementById("lastMessage");
+
+lastMessage.innerText = "Il cognome inserito è in posizione: " + (surnamesList.indexOf(surnameUser) + 1);
