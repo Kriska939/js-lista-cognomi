@@ -35,6 +35,13 @@ while (!surnameUser || surnameUser.trim() === "");
 
 surnameUser = surnameUser.trim();
 
+// Extra: tutti i cognomi in lista devono avere solo la prima lettera maiuscola
+
+var firstLetter = surnameUser.charAt(0).toUpperCase();
+var restOfSurname = surnameUser.substring(1).toLowerCase();
+
+surnameUser = firstLetter + restOfSurname;
+
 // Step 3 - Aggiungi il nuovo cognome all'array
 
 surnamesList.push(surnameUser);
@@ -60,3 +67,6 @@ finalList.innerHTML = listContent;
 var lastMessage = document.getElementById("lastMessage");
 
 lastMessage.innerText = "Il cognome inserito è in posizione: " + (surnamesList.indexOf(surnameUser) + 1);
+
+
+
