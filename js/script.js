@@ -28,8 +28,12 @@ var surnameUser;
 do {
     surnameUser = prompt("Inserisci il tuo cognome");
 }
-// ripeti "do" finché lascio surnameUser vuoto:
-while (!surnameUser);
+// ripeti "do" finché lascio surnameUser vuoto, oppure clicco annulla:
+while (!surnameUser || surnameUser.trim() === "");
+
+// tolgo comunque eventuali spazi all'input fornito dall'utente: 
+
+surnameUser = surnameUser.trim();
 
 // Step 3 - Aggiungi il nuovo cognome all'array
 
@@ -43,10 +47,13 @@ console.log(surnamesList);
 // stampa in pagina
 
 var finalList = document.getElementById("result");
+var listContent = "";
 
 for (i = 0; i < surnamesList.length; i++) {
-    finalList.innerHTML += "<li>" + surnamesList[i] + "</li>"
+    listContent += "<li>" + surnamesList[i] + "</li>"
 }
+
+finalList.innerHTML = listContent;
 
 // Step 5 - Stampa la posizione "umana" del cognome utente aggiunto in lista
 
